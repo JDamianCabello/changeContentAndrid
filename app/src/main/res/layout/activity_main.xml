@@ -39,15 +39,14 @@
             android:text="Particular" />
     </RadioGroup>
 
-    <ViewStub
-        android:id="@+id/includeLayout"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/llyContenido"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
-        android:layout="@layout/layout_bussiness"
-        android:visibility="visible"
+        android:layout_marginTop="24dp"
+        android:orientation="vertical"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rgpTipo" />
+        app:layout_constraintTop_toBottomOf="@+id/rgpTipo"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
