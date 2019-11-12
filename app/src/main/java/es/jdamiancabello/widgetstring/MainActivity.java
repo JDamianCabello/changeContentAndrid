@@ -65,9 +65,7 @@ public class MainActivity extends AppCompatActivity {
      * Inicializar el componente y añadir posibles eventos
      */
     private void initialiceMonth(){
-        String months[] = {"Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre", "Noviembre", "Diciembre"};
-
-        ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,months);
+       ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.months));
         autoCompleteTextViewMonth.setAdapter(arrayAdapter);
     }
 
