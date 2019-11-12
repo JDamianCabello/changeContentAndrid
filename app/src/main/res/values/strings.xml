@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">WidgetString</string>
+    <string name="tvTipo">Tipo Cliente:</string>
+    <string name="rbEmpresa">Empresa</string>
+    <string name="rbParticular">Particular</string>
+    <string name="tvRazonSocial">Razón Social</string>
+    <string name="tvRepresentante">Representante</string>
+    <string name="tvNumeroEmpleados">Número Empleados</string>
+    <string name="tvName">Name</string>
+    <string name="tvProfesion">Profesion</string>
+    <string name="tvMonth">Mes de Alta</string>
+    <string name="cbNotifications">Recieve Notifications</string>
+    <string name="wvInformation">
+        <![CDATA[
+        <html>
+            <body>
+                <h2>Web bien bonica</h2>
+                <p>A continuación se muestra la <b>información</b> de la empresa</p>
+            </body>
+        </html>
+        ]]>
+    </string>
+
+    <plurals name="numEmployees">
+        <item quantity="zero">Tu empresa no tiene empleados</item>
+        <item quantity="one">Tu empresa tiene un empleado</item>
+        <item quantity="other">Tu empresa tiene %d empleados</item>
+    </plurals>
 </resources>

@@ -40,4 +40,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/spNumeroEmpleados" />
+
+    <WebView
+        android:id="@+id/wbinformation"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 </LinearLayout>
