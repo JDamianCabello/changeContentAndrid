@@ -20,9 +20,8 @@
         </html>
         ]]>
     </string>
-
+    <string name="zeroEmployees">Tu empresa no tiene empleados</string>
     <plurals name="numEmployees">
-        <item quantity="zero">Tu empresa no tiene empleados</item>
         <item quantity="one">Tu empresa tiene un empleado</item>
         <item quantity="other">Tu empresa tiene %d empleados</item>
     </plurals>

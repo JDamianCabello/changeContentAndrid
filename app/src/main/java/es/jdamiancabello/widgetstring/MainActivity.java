@@ -38,16 +38,16 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int id) {
                 contenido.removeAllViews();
-                switch (id){
+                switch (id) {
                     case R.id.rbEmpresa:
-                        contenido.addView(LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_bussiness,contenido,false));
+                        contenido.addView(LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_bussiness, contenido, false));
                         webViewInformation = findViewById(R.id.wbinformation);
                         spNumEmployees = findViewById(R.id.spNumeroEmpleados);
                         initialiceWvInformation();
                         initialiceNumEmployees();
                         break;
                     case R.id.rbParticular:
-                        contenido.addView(LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_particular,contenido,false));
+                        contenido.addView(LayoutInflater.from(MainActivity.this).inflate(R.layout.layout_particular, contenido, false));
                         autoCompleteTextViewMonth = findViewById(R.id.atMonth);
                         initialiceMonth();
                         break;
@@ -58,27 +58,31 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initialiceWvInformation() {
-        webViewInformation.loadData(getResources().getString(R.string.wvInformation),"text/html","utf-8");
+        webViewInformation.loadData(getResources().getString(R.string.wvInformation), "text/html", "utf-8");
     }
 
     /**
      * Inicializar el componente y añadir posibles eventos
      */
-    private void initialiceMonth(){
-       ArrayAdapter arrayAdapter = new ArrayAdapter(this,android.R.layout.simple_list_item_1,getResources().getStringArray(R.array.months));
+    private void initialiceMonth() {
+        ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, getResources().getStringArray(R.array.months));
         autoCompleteTextViewMonth.setAdapter(arrayAdapter);
     }
 
     /**
      * Iniciar el componente sp y añadir posibles eventos
      */
-    private void initialiceNumEmployees(){
+    private void initialiceNumEmployees() {
         spNumEmployees.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
                 //Toast.makeText(adapterView.getContext(),"Has seleccionado" + spNumEmployees.getItemAtPosition(i).toString() + " empleado",Toast.LENGTH_SHORT);
-                String mensaje = spNumEmployees.getResources().getQuantityString(R.plurals.numEmployees,Integer.parseInt(spNumEmployees.getSelectedItem().toString()),Integer.parseInt(spNumEmployees.getSelectedItem().toString()));
-                Toast.makeText(adapterView.getContext(),mensaje,Toast.LENGTH_SHORT).show();
+                String mensaje = "";
+                if (spNumEmployees.getSelectedItem().toString().equals("0"))
+                    mensaje = getString(R.string.zeroEmployees);
+                else
+                    mensaje = spNumEmployees.getResources().getQuantityString(R.plurals.numEmployees, Integer.parseInt(spNumEmployees.getSelectedItem().toString()), Integer.parseInt(spNumEmployees.getSelectedItem().toString()));
+                Toast.makeText(adapterView.getContext(), mensaje, Toast.LENGTH_SHORT).show();
             }
 
             @Override
